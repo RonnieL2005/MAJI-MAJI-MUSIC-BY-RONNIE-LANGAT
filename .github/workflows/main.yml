@@ -11,6 +11,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Use Node.js version 20
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install dependencies
@@ -28,6 +32,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Use Node.js version 20
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Download artifact
